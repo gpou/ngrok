@@ -24,6 +24,8 @@ install: $(BUNDLE_CMD) bundle_install
 
 clean: kitchen_destroy
 
+release: bump_version git_push_tags berks_upload
+
 
 # Bundler itself:
 
@@ -51,6 +53,11 @@ kitchen_test:
 foodcritic:
 	$(BUNDLE_EXEC) foodcritic .
 
+bump_version:
+	$(BUNDLE_EXEC) scmversion bump auto --default patch
+
+git_push_tags:
+	git push origin --tags
 
 # knife targets:
 
