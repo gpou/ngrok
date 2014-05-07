@@ -14,7 +14,7 @@ suites:
       - recipe[ngrok::default]
     attributes:
       ngrok:
-        authtoken: Dtv-m6wlNK8DIzE8UB9u
+        auth_token: Dtv-m6wlNK8DIzE8UB9u
         tunnels:
           kitchen-ci-test-vm:
             proto:
