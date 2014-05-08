@@ -1,10 +1,7 @@
 Description
 ===========
-[![Cookbook Version](http://img.shields.io/cookbook/v/ngrok.svg)][cookbook]
-[![Build Status](http://img.shields.io/travis/onbeep-cookbooks/ngrok.svg)][travis]
-
-[cookbook]: https://community.opscode.com/cookbooks/ngrok
-[travis]: http://travis-ci.org/onbeep-cookbooks/ngrok
+[![Cookbook Version](http://img.shields.io/cookbook/v/ngrok.svg)][https://community.opscode.com/cookbooks/ngrok]
+[![Build Status](http://img.shields.io/travis/onbeep-cookbooks/ngrok.svg)][http://travis-ci.org/onbeep-cookbooks/ngrok]
 
 Installs & configures the ngrok client program. Ngrok can be used for establishing
 network tunnels from the outside world to the inside world.
