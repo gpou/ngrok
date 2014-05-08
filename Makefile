@@ -56,8 +56,15 @@ foodcritic:
 bump_version:
 	$(BUNDLE_EXEC) scmversion bump auto --default patch
 
+berks_install: bundle_install
+	$(BUNDLE_EXEC) berks install
+
+berks_upload: berks_install
+	$(BUNDLE_EXEC) berks upload
+
 git_push_tags:
 	git push origin --tags
+
 
 # knife targets:
 
