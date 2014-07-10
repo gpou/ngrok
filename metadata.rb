@@ -6,5 +6,5 @@ description      'Installs/Configures ngrok'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version IO.read(File.join(File.dirname(__FILE__), 'VERSION')) rescue '1.0.0'
 
-depends 'ark',
+depends 'ark'
 depends 'supervisor'
