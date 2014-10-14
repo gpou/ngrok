@@ -16,7 +16,7 @@ describe file('/usr/local/ngrok/ngrok') do
 end
 
 describe command('/usr/local/ngrok/ngrok help') do
-  it { should return_stdout /Print help/ }
+  its(:stdout) { should match /Print help/ }
 end
 
 describe file('/etc/ngrok.conf') do
@@ -32,8 +32,4 @@ end
 describe service('supervisor') do
   it { should be_enabled }
   it { should be_running }
-end
-
-describe service('ngrok') do
-  it { should be_running.under('supervisor') }
 end
