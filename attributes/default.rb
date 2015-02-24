@@ -9,7 +9,7 @@
 #
 
 
-default['ngrok']['download_site'] = 'https://dl.ngrok.com'
+default['ngrok']['download_site'] = 'https://api.equinox.io/1/Applications/ap_pJSFC5wQYkAyI0FIVwKYs9h1hW/Updates/Asset/'
 default['ngrok']['zip_file'] = 'ngrok.zip'
 default['ngrok']['config_file'] = File.join(
   File::SEPARATOR, 'etc', 'ngrok.conf')
