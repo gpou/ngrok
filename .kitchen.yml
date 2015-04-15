@@ -12,7 +12,7 @@ suites:
   - name: default
     run_list:
       - recipe[apt]
-      - recipe[ngrok::default]
+      - recipe[ngrok]
     attributes:
       ngrok:
         auth_token: Dtv-m6wlNK8DIzE8UB9u
