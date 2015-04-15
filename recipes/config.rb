@@ -21,6 +21,10 @@ ngrok_config['inspect_addr'] = node['ngrok']['inspect_addr'] if node['ngrok']['i
 
 
 file node['ngrok']['config_file'] do
-  content ngrok_config.to_yaml
+  # horrible workaround for immutablehash to mutable hash
+  hash = ngrok_config.to_hash
+  mutable_hash = JSON.parse(hash.dup.to_json)
+  ngrok_config = mutable_hash.to_yaml
+  content ngrok_config
   notifies :restart, 'supervisor_service[ngrok]', :delayed
 end
