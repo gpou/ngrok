@@ -20,3 +20,10 @@ suites:
           kitchen-ci-test-vm:
             proto:
               http+https: 80
+  - name: lwrp
+    run_list:
+      - recipe[apt]
+      - recipe[fake]
+    attributes:
+      ngrok:
+        auth_token: Dtv-m6wlNK8DIzE8UB9u
