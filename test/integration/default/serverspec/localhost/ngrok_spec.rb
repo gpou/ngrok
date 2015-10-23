@@ -16,7 +16,7 @@ describe file('/usr/local/ngrok/ngrok') do
 end
 
 describe command('/usr/local/ngrok/ngrok help') do
-  its(:stdout) { should match /Print help/ }
+  its(:stderr) { should match /Print help/ }
 end
 
 describe file('/etc/ngrok.conf') do
