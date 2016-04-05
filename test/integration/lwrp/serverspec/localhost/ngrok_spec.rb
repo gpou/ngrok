@@ -16,7 +16,7 @@ describe file('/usr/local/ngrok/ngrok') do
 end
 
 describe command('/usr/local/ngrok/ngrok help') do
-  its(:stderr) { should match /Print help/ }
+  its(:stdout) { should match /ngrok - tunnel local ports to public URLs and inspect traffic/ }
 end
 
 describe file('/etc/ngrok.conf') do
