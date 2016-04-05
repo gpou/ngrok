@@ -9,8 +9,8 @@
 #
 
 
-default['ngrok']['download_site'] = 'https://api.equinox.io/1/Applications/ap_pJSFC5wQYkAyI0FIVwKYs9h1hW/Updates/Asset/'
-default['ngrok']['zip_file'] = 'ngrok.zip'
+default['ngrok']['download_site'] = 'https://bin.equinox.io/c/4VmDzA7iaHb/'
+default['ngrok']['zip_file'] = 'ngrok-stable-linux-amd64.zip'
 default['ngrok']['config_file'] = File.join(
   File::SEPARATOR, 'etc', 'ngrok.conf')
 default['ngrok']['auth_token'] = ''
