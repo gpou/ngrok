@@ -30,7 +30,7 @@ end
 
 def render_ngrok_config
   ngrok_config = {
-    'auth_token' => node['ngrok']['auth_token'],
+    'authtoken' => node['ngrok']['auth_token'],
     'tunnels' => node['ngrok']['tunnels']
   }
 

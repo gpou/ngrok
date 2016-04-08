@@ -7,7 +7,7 @@ ngrok_tunnel "fake_cookbook_tunnel" do
   proto "http"
   host_header "vagrant.local"
   inspect false
-  subdomain "vagrant"
+  subdomain "fake_cookbook_tunnel"
   crt "example.crt"
   key "example.key"
   remote_addr "192.168.0.1:80"

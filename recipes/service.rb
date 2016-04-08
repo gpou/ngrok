@@ -15,13 +15,14 @@ include_recipe 'supervisor'
 
 ngrok_cmd = [
   File.join(node['ark']['prefix_home'], 'ngrok', 'ngrok'),
+  'start',
   '-log=stdout',
   "-config=#{node['ngrok']['config_file']}",
-  'start',
   node['ngrok']['tunnels'].keys().join(' ')
 ].join(' ')
 
 supervisor_service 'ngrok' do
   command ngrok_cmd
+  user 'ngrok'
   action :enable
 end

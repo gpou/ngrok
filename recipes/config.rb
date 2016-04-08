@@ -9,22 +9,17 @@
 #
 
 
-require 'yaml'
-
-
-ngrok_config = {
-  'auth_token' => node['ngrok']['auth_token'],
-  'tunnels' => node['ngrok']['tunnels']
-}
-
-ngrok_config['inspect_addr'] = node['ngrok']['inspect_addr'] if node['ngrok']['inspect_addr']
-
-
-file node['ngrok']['config_file'] do
-  # horrible workaround for immutablehash to mutable hash
-  hash = ngrok_config.to_hash
-  mutable_hash = JSON.parse(hash.dup.to_json)
-  ngrok_config = mutable_hash.to_yaml
-  content ngrok_config
-  notifies :restart, 'supervisor_service[ngrok]', :delayed
+node['ngrok']['tunnels'].each do |k,v|
+  ngrok_tunnel k do
+    addr v['addr'] if v['addr']
+    auth v['auth'] if v['auth']
+    bind_tls v['bind_tls'] if v['bind_tls']
+    proto v['proto'] if v['proto']
+    host_header v['host_header'] if v['host_header']
+    inspect v['inspect'] if v['inspect']
+    subdomain v['subdomain'] if v['subdomain']
+    crt v['crt'] if v['crt']
+    key v['key'] if v['key']
+    remote_addr v['remote_addr'] if v['remote_addr']
+  end
 end

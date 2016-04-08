@@ -3,10 +3,10 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
 
 platforms:
-  - name: ubuntu-12.04
+  - name: ubuntu-14.04
 
 suites:
   - name: default
@@ -15,15 +15,15 @@ suites:
       - recipe[ngrok]
     attributes:
       ngrok:
-        auth_token: Dtv-m6wlNK8DIzE8UB9u
+        auth_token: Dmf3sPHijAG41E4wCGZh_5jVzT1LwzfHBKqnndoETH
         tunnels:
           kitchen-ci-test-vm:
-            proto:
-              http+https: 80
+            proto: http
+            addr: 80
   - name: lwrp
     run_list:
       - recipe[apt]
       - recipe[fake]
     attributes:
       ngrok:
-        auth_token: Dtv-m6wlNK8DIzE8UB9u
+        auth_token: Dmf3sPHijAG41E4wCGZh_5jVzT1LwzfHBKqnndoETH
